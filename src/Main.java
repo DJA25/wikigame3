@@ -83,15 +83,17 @@ public class Main  {
                 String start = link.getText();
                 String search = searc.getText();
                 if(!start.contains("/wiki/") || !search.contains("/wiki/") || !start.contains("wikipedia.org") || !search.contains("wikipedia.org")) {
+                    System.out.println("FML2");
                     bottom.setText("Invalid wikipedia link. Try again.");
                 }
                 try {
                     URL url = new URL(start);
                     url = new URL(search);
-                    bottom.setText("Please Wait. Calculating Result.");
+//                    bottom.setText("Please Wait. Calculating Result.");
                     search(start, search);
                 }
                 catch(Exception e2) {
+                    System.out.println("FML");
                     bottom.setText("Invalid wikipedia link. Try again.");
                 }
             }
@@ -119,6 +121,8 @@ public class Main  {
         depths.clear();
         backlinks.clear();
         backdepths.clear();
+        path.clear();
+        path2.clear();
 
         links.add(start);
         depths.add(0);
